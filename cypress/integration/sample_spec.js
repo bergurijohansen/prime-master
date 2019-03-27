@@ -8,7 +8,7 @@ describe('My First Test', function() {
     })
 
     it('find name of machine', () => {
-        cy.get('p').should('contain', 'master 2000')
+        cy.get('p').should('contain', 'master 20001')
     })
 
   })
