@@ -7,7 +7,7 @@ it("4 + 4 = 8", () => {
 });
 
 it("value is true", () => {
-  const value = true;
+  const value = false;
 
   expect(value).toEqual(true);
 });
