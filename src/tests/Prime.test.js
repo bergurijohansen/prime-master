@@ -1,7 +1,7 @@
 // import React from "react";
 
 it("4 + 4 = 8", () => {
-  const res = 3 + 4;
+  const res = 4 + 4;
 
   expect(res).toEqual(8);
 });
