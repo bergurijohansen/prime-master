@@ -2,7 +2,17 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2
+version: 2.1
+orbs:
+  # "cypress-io/cypress@1" installs the latest published
+  # version "1.x.y" of the orb. We recommend you then use
+  # the strict explicit version "cypress-io/cypress@1.x.y"
+  # to lock the version and prevent unexpected CI changes
+  cypress: cypress-io/cypress@1
+workflows:
+  build:
+    jobs:
+      - cypress/run # "run" job comes from "cypress" orb
 jobs:
   build:
     docker:
@@ -19,7 +29,7 @@ jobs:
       - run: npm i -D react-test-renderer enzyme-adapter-react-16
       - run: npm install
       - run: npm test
-      - run: npx cypress run
+    #  - run: npx cypress run
     # deploy:
     #   - add_ssh_keys:
     #       - fingerprints:
