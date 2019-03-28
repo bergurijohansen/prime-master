@@ -4,10 +4,16 @@
 #
 version: 2
 jobs:
+  - cypress/install:
+      build: 'npm run build'  # run a custom app build step
+  - cypress/run:
+      requires:
+        - cypress/install
   build:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.11.3
+      - image: cypress/base:8
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
