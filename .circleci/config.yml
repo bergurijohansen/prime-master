@@ -18,12 +18,7 @@ jobs:
       - run: npm i -D enzyme
       - run: npm i -D react-test-renderer enzyme-adapter-react-16
       - run: npm install
-      - run: apt-get install xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
-      - run: cypress run # "run" job comes from "cypress" orb
       - run: npm test
-  workflows:
-  build:
-    jobs:
       - cypress/install:
           build: 'npm run build'  # run a custom app build step
       - cypress/run:
