@@ -8,7 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.11.3
-      - image: cypress/base:10
+      - image: cypress/base:8
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -18,11 +18,8 @@ jobs:
       - run: npm i -D enzyme
       - run: npm i -D react-test-renderer enzyme-adapter-react-16
       - run: npm install
-      - run: npm ci
       - run: npx cypress run # "run" job comes from "cypress" orb
       - run: npm test
-      - run: cypress/run # "run" job comes from "cypress" orb
-      #  - run: npx cypress run
     # deploy:
     #   - add_ssh_keys:
     #       - fingerprints:
