@@ -18,7 +18,7 @@ jobs:
       - run: npm i -D enzyme
       - run: npm i -D react-test-renderer enzyme-adapter-react-16
       - run: npm install
-      - run: npx cypress run # "run" job comes from "cypress" orb
+      - run: cypress run # "run" job comes from "cypress" orb
       - run: npm test
     # deploy:
     #   - add_ssh_keys:
